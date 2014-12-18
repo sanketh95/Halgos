@@ -1,3 +1,6 @@
+-- Bubble Sort
+-- By Sanketh Mopuru
+
 -- Bubble sort algorithm
 bubbleSort :: [Int] -> [Int]
 bubbleSort [] = []

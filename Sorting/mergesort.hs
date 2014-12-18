@@ -1,3 +1,6 @@
+-- Merge Sort
+-- By Sanketh Mopuru
+
 -- Merge sort algorithm
 mergeSort :: [Int] -> [Int]
 mergeSort [] = []
