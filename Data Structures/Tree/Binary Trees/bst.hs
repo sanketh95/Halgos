@@ -13,5 +13,19 @@ isSorted (x:(y:xs))
   | x > y = False
   | otherwise = isSorted (y:xs)
 
-sort :: BST a -> [a]
+sort :: Ord a => BST a -> [a]
 sort x = inorder x
+
+createFromSorted :: Ord a => [a] -> BST a
+createFromSorted [] = Empty
+createFromSorted (x:xs) = (Branch x (Empty) (createFromSorted xs))
+
+createBalancedFromSorted :: Ord a => [a] -> BST a
+createBalancedFromSorted = undefined
+
+search :: Ord a => a -> BST a -> Bool
+search _ Empty = False
+search x (Branch y lt rt)
+  | x == y = True
+  | x < y = search x lt
+  | x > y = search x rt
